@@ -1,0 +1,13 @@
+.previewBody {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview {
+  background-color: white;
+  border: 1px solid gray;
+  height: 50px;
+  margin-bottom: 5px;
+  width: 50px;
+}

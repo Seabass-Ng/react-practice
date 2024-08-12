@@ -1,0 +1,36 @@
+.ceBody {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.leftNav {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+}
+
+.leftNav li {
+  cursor: pointer;
+  padding: 20px;
+  width: 120px;
+}
+
+.leftNav li.selected {
+  border: 1px solid white;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+}
+
+.rightPane {
+  border: 1px solid white;
+  border-radius: 5px;
+  display: grid;
+  gap: 10px 10px;
+  grid-template-columns: 75px 200px;
+  margin: 0;
+  margin-left: 20px;
+  padding: 20px;
+}

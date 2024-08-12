@@ -1,0 +1,12 @@
+.flexbox {
+  display: flex;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.screen {
+  width: 200px;
+}
