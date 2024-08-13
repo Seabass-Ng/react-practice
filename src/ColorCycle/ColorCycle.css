@@ -1,0 +1,23 @@
+.colorContainers {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.fieldContainer {
+  display: grid;
+  grid-template-columns: 80px 50px;
+  margin-right: 20px;
+}
+
+.currentFieldContainer {
+  display: grid;
+  grid-template-columns: 125px 50px;
+  
+}
+
+.colorBox {
+  height: 50px;
+  width: 50px;
+}
