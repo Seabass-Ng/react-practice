@@ -1,4 +1,4 @@
-import { lazy, useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import classnames from './utils/classnames';
 import './App.css';
 
@@ -7,6 +7,7 @@ const BorderRadiusPreviewer = lazy(() => import('./Border-Radius-Previewer/Borde
 const Calculator = lazy(() => import('./Calculator/Calculator'));
 const CauseEffect = lazy(() => import('./CauseEffect/CauseEffect'));
 const ColorCycle = lazy(() => import('./ColorCycle/ColorCycle'));
+const CountdownTimer = lazy(() => import('./CountdownTimer/CountdownTimer'));
 
 enum Apps {
   BorderRadiusPreviewer = "BorderRadiusPreviewer",
@@ -14,6 +15,7 @@ enum Apps {
   Calculator = "Calculator",
   CauseEffect = "CauseEffect",
   ColorCycle = 'ColorCycle',
+  CountdownTimer = 'CountdownTimer',
 }
 
 const TypeToApp = {
@@ -21,8 +23,11 @@ const TypeToApp = {
   [Apps.Bin2Dec]: Bin2Dec,
   [Apps.Calculator]: Calculator,
   [Apps.CauseEffect]: CauseEffect,
-  [Apps.ColorCycle]: ColorCycle
+  [Apps.ColorCycle]: ColorCycle,
+  [Apps.CountdownTimer]: CountdownTimer
 };
+
+const Loading = () => "Loading...";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState(Apps.BorderRadiusPreviewer);
@@ -34,13 +39,16 @@ function App() {
           <li
             className={classnames('tabItem', selectedTab === app && 'selected')}
             onClick={() => setSelectedTab(app as Apps)}
+            key={app}
           >
             {app}
           </li>
         ))}
       </ul>
       <div className="appViewer">
-        <BodyComponent />
+        <Suspense fallback={<Loading />}>
+          <BodyComponent />
+        </Suspense>
       </div>
     </div>
   )

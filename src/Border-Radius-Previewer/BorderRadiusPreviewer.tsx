@@ -1,4 +1,4 @@
-import { ChangeEvent, ReducerAction, ReducerState, useReducer, useState } from "react";
+import { ChangeEvent, Fragment, ReducerAction, ReducerState, useReducer, useState } from "react";
 import './BorderRadiusPreviewer.css';
 
 type ReducerState = {
@@ -86,7 +86,7 @@ const BorderRadiusPreviewer = () => {
       />
 
       {types.map((type: Types) => (
-        <>
+        <Fragment key={type}>
           <label htmlFor={type}>
             {typeToTitle(type)}:
           </label>
@@ -101,7 +101,7 @@ const BorderRadiusPreviewer = () => {
             }
             value={state[type]}
           />
-        </>
+        </Fragment>
       ))}
 
       <div>border-radius: {borderRadius}</div>
