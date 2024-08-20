@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.3.1", 
+    "@tanstack/react-query": "^5.51.24",
+    "@uidotdev/usehooks": "^2.4.1",
+    "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
