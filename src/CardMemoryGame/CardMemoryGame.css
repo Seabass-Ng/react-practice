@@ -1,0 +1,13 @@
+.gameLayout {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.card {
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 20px;
+    width: 30px;
+}
