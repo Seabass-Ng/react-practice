@@ -4,11 +4,11 @@ type Props = {
 
 const Congratulation = ({
     startOver
-}: Props) => {
+}: Props) => (
     <>
         <div>Congratulations! You won</div>
         <button onClick={startOver}>Start Over</button>
     </>
-};
+);
 
 export default Congratulation;

@@ -5,9 +5,19 @@
 }
 
 .card {
+    background-color: gray;
     border: 1px solid gray;
     border-radius: 5px;
     font-size: 20px;
     padding: 20px;
-    width: 30px;
+    height: 70px;
+    width: 70px;
+}
+
+.card.flipped {
+    background-color: white;
+}
+
+.card.noValue {
+    background-color: black;
 }
