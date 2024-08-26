@@ -1,0 +1,11 @@
+.displayWord {
+    color: white;
+}
+
+.displayWord .correct {
+    color: green;
+}
+
+.displayWord .incorrect {
+    color: red;
+}

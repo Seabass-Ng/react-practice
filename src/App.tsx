@@ -12,6 +12,7 @@ const CauseEffect = lazy(() => import('./CauseEffect/CauseEffect'));
 const ColorCycle = lazy(() => import('./ColorCycle/ColorCycle'));
 const CountdownTimer = lazy(() => import('./CountdownTimer/CountdownTimer'));
 const CardMemoryGame = lazy(() => import('./CardMemoryGame/CardMemoryGame'));
+const TypingPractice = lazy(() => import('./TypingPractice/MainPractice'));
 
 enum Apps {
   Bin2Dec = "Bin2Dec",
@@ -22,6 +23,7 @@ enum Apps {
   CauseEffect = "CauseEffect",
   ColorCycle = 'ColorCycle',
   CountdownTimer = 'CountdownTimer',
+  TypingPractice = 'TypingPractice',
 }
 
 const TypeToApp = {
@@ -32,7 +34,8 @@ const TypeToApp = {
   [Apps.CardMemoryGame]: CardMemoryGame,
   [Apps.CauseEffect]: CauseEffect,
   [Apps.ColorCycle]: ColorCycle,
-  [Apps.CountdownTimer]: CountdownTimer
+  [Apps.CountdownTimer]: CountdownTimer,
+  [Apps.TypingPractice]: TypingPractice,
 };
 
 const Loading = () => "Loading...";
