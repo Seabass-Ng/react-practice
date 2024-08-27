@@ -38,6 +38,7 @@ const DisplayWord = ({
 };
 
 const MainPractice = () => {
+    const [accuracy, setAccuracy] = useState(100);
     const [curWord, setCurWord] = useState(getNewWord());
     const [typedWord, setTypedWord] = useState('');
     const [wpm, setWPM] = useState(0);
@@ -57,26 +58,28 @@ const MainPractice = () => {
             const now = Date.now();
             const timeDiff = (now - startTime.current) / (1000 * 60);
             setWPM(wordsCompleted / timeDiff);
+            setAccuracy(Math.floor((lettersTyped.current - numErrors.current) * 100 / lettersTyped.current + 0.5));
         } else {
             setTypedWord(newTypedWord);
         }
     }
 
-    // const onKeyDown = (e: KeyboardEventHandler<HTMLInputElement>) => {
-    //     if (e. !== 'Backspace') {
-    //         if (curWord.charAt(typedWord.length) !== e.code) {
-    //             numErrors.current++;
-    //         }
-    //     }
-    // };
+    const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.code !== 'Backspace') {
+            if (`Key${curWord.charAt(typedWord.length).toUpperCase()}` !== e.code) {
+                numErrors.current++;
+            }
+        }
+    };
 
     return (
         <div>
+            <div>Accuracy: {accuracy}%</div>
             <div>
                 Words Per Minute: {wpm.toFixed(2)}
             </div>
             <DisplayWord word={curWord} typedWord={typedWord} />
-            <input onChange={onChange} value={typedWord} />
+            <input onChange={onChange} onKeyDown={onKeyDown} value={typedWord} />
         </div>
     );
 };
